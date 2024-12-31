@@ -29,6 +29,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    
+    - name: Upload Surefire Reports
+      if: always()  # Ensures this step runs even if the build/test fails
+      uses: actions/upload-artifact@v3
+      with:
+        name: surefire-reports
+        path: target/surefire-reports/
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
