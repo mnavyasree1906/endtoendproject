@@ -30,12 +30,26 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     
+    - name: Install Allure Commandline
+      run: |
+        sudo apt-get update
+        sudo apt-get install allure
+
+    - name: Generate Allure Report
+      run: mvn allure:serve &  # Optional: If you want to serve locally. You can remove '&' for serving it as a background process
+
     - name: Upload Surefire Reports
       if: always()  # Ensures this step runs even if the build/test fails
       uses: actions/upload-artifact@v3
       with:
         name: surefire-reports
         path: target/surefire-reports/
+
+    - name: Upload Allure Results as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: target/allure-results/
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
