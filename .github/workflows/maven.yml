@@ -38,6 +38,9 @@ jobs:
     - name: Generate Allure Report
       run: mvn allure:serve &  # Optional: If you want to serve locally. You can remove '&' for serving it as a background process
 
+    - name: List target directory for Allure Results
+      run: ls -la target/
+
     - name: Upload Surefire Reports
       if: always()  # Ensures this step runs even if the build/test fails
       uses: actions/upload-artifact@v3
@@ -46,12 +49,14 @@ jobs:
         path: target/surefire-reports/
 
     - name: Upload Allure Results as Artifact
+      if: always()  # Ensures this step runs even if the build/test fails
       uses: actions/upload-artifact@v3
-      with:
-        name: allure-report
-        path: target/allure-results/
+       with:
+      
+      - name: allure-report
+        path: target/allure-results//
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+      - name: Update dependency graph
+        uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
 
