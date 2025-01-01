@@ -1,0 +1,59 @@
+name: Run Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+      - surefire
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Check out this repo
+        uses: actions/checkout@v2
+
+      # Remove any existing Chromium/Chrome installations
+      - name: Remove Chrome
+        run: sudo apt purge -y google-chrome-stable || true
+      - name: Remove default Chromium
+        run: sudo apt purge -y chromium-browser || true
+
+      # Install a new version of Chromium
+      - name: Install a new Chromium
+        run: sudo apt install -y chromium-browser
+
+      # Sudo Apt Get Update
+      - name: Sudo Apt Get Update
+        run: sudo apt-get update
+
+      # Install Linux Libs
+      - name: Install Linux Libs
+        run: sudo apt-get install -y libnss3 libgdk-pixbuf2.0-0 libxss1 libappindicator3-1 libasound2
+
+      # Set up Java
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      # Set up Maven
+      - name: Set up Maven
+        uses: s4u/maven-settings-action@v2
+
+      # Install dependencies and run Maven tests
+      - name: Run Maven Tests
+        run: mvn clean test --batch-mode --fail-at-end
+
+      # Generate Surefire HTML Report
+      - name: Generate Surefire HTML Report
+        run: mvn surefire-report:report
+
+      # List Surefire Report Directory for debugging
+      - name: List Surefire Report Directory
+        run: ls -R home/runner/work/endtoendproject
+
+     
