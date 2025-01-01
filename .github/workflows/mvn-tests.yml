@@ -46,7 +46,7 @@ jobs:
 
       # Install dependencies and run Maven tests
       - name: Run Maven Tests
-        run: mvn test --batch-mode --fail-at-end
+        run: mvn clean test --batch-mode --fail-at-end
 
       # Generate Surefire HTML Report
       - name: Generate Surefire HTML Report
