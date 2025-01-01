@@ -33,13 +33,25 @@ jobs:
         
     # Build with Maven
     - name: Build with Maven
-      run: mvn test
+      run: mvn -B package --file pom.xml
 
-  
+    # Generate Surefire HTML Report
+    - name: Generate Surefire HTML Report
+      run: mvn surefire-report:report
+
+    # Install Allure Commandline
+    - name: Install Allure Commandline
+      run: |
+        sudo apt-get update
+        sudo apt-get install allure
+        
+    # Generate Allure Report
+    - name: Generate Allure Report
+      run: mvn allure:serve &  # Optional: If you want to serve locally. You can remove '&' for serving it as a background process
 
      # Optional: List contents of the target directory for debugging
-    - name: List work directory
-      run: ls -R /home/runner/work/
+    - name: List target directory for Allure Results
+      run: ls -la target/
 
     # Upload Surefire Reports as an artifact
     - name: Upload Surefire Reports
