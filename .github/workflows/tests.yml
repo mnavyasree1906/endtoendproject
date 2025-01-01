@@ -46,14 +46,29 @@ jobs:
 
       # Install dependencies and run Maven tests
       - name: Run Maven Tests
-        run: mvn clean test --batch-mode --fail-at-end
+        run: mvn test --batch-mode --fail-at-end
 
       # Generate Surefire HTML Report
       - name: Generate Surefire HTML Report
         run: mvn surefire-report:report
 
-      # List Surefire Report Directory for debugging
+      # List Surefire Report Directory
       - name: List Surefire Report Directory
-        run: ls -R home/runner/work/endtoendproject
+        run: ls -la target/site
 
-     
+      # Upload Surefire HTML Report as Artifact
+      - name: Upload HTML Report as Artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: surefire-html-report
+          path: target/site/surefire-report.html
+
+      # Publish Surefire HTML Report on GitHub Pages
+      - name: Publish Surefire HTML Report
+        if: success() || failure()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site  # Path to the directory containing index.html
+          publish_branch: gh-pages  # Publish to the gh-pages branch
