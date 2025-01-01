@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-01T12:28:35 UTC" name="Surefire suite" finished-at="2025-01-01T12:28:52 UTC" duration-ms="16247">
+  <suite started-at="2025-01-01T12:28:58 UTC" name="Surefire suite" finished-at="2025-01-01T12:29:13 UTC" duration-ms="14492">
     <groups>
     </groups>
-    <test started-at="2025-01-01T12:28:35 UTC" name="Surefire test" finished-at="2025-01-01T12:28:52 UTC" duration-ms="16247">
+    <test started-at="2025-01-01T12:28:58 UTC" name="Surefire test" finished-at="2025-01-01T12:29:13 UTC" duration-ms="14492">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:28:35 UTC" name="setup" finished-at="2025-01-01T12:28:37 UTC" duration-ms="1606" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:28:58 UTC" name="setup" finished-at="2025-01-01T12:29:00 UTC" duration-ms="1767" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testInvalidLogin()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:28:37 UTC" name="testInvalidLogin" finished-at="2025-01-01T12:28:49 UTC" duration-ms="12156" status="FAIL">
+        <test-method signature="testInvalidLogin()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:29:00 UTC" name="testInvalidLogin" finished-at="2025-01-01T12:29:11 UTC" duration-ms="11191" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Test failed: no such element: Unable to locate element: {"method":"css selector","selector":".oxd\-topbar\-header\-breadcrumb"}
@@ -20,9 +20,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-1025-azure', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0197941ba018743ea0fa9698cf6b086b, findElement {using=class name, value=oxd-topbar-header-breadcrumb}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:32923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:32923/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0197941ba018743ea0fa9698cf6b086b]]>
+Command: [7c5db8772b365429b69c94bda9905177, findElement {using=class name, value=oxd-topbar-header-breadcrumb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44195}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44195/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7c5db8772b365429b69c94bda9905177]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: Test failed: no such element: Unable to locate element: {"method":"css selector","selector":".oxd\-topbar\-header\-breadcrumb"}
@@ -31,9 +31,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-1025-azure', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0197941ba018743ea0fa9698cf6b086b, findElement {using=class name, value=oxd-topbar-header-breadcrumb}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:32923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:32923/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0197941ba018743ea0fa9698cf6b086b
+Command: [7c5db8772b365429b69c94bda9905177, findElement {using=class name, value=oxd-topbar-header-breadcrumb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44195}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44195/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7c5db8772b365429b69c94bda9905177
 at org.testng.Assert.fail(Assert.java:111)
 at tests.LoginTest.testInvalidLogin(LoginTest.java:128)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -73,11 +73,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidLogin -->
-        <test-method signature="testValidLogin()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:28:49 UTC" name="testValidLogin" finished-at="2025-01-01T12:28:51 UTC" duration-ms="2082" status="PASS">
+        <test-method signature="testValidLogin()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:29:11 UTC" name="testValidLogin" finished-at="2025-01-01T12:29:12 UTC" duration-ms="1129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:28:51 UTC" name="teardown" finished-at="2025-01-01T12:28:52 UTC" duration-ms="331" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@196a42c3]" started-at="2025-01-01T12:29:12 UTC" name="teardown" finished-at="2025-01-01T12:29:13 UTC" duration-ms="337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
