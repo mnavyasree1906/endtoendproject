@@ -84,7 +84,7 @@ public class LoginTest {
     @Test
     public void testValidLogin() {
         // Create a new ExtentTest instance for the test
-        test = extent.createTest("testValidLogin");
+        test = extent.createTest("Login with Valid Credentials");
 
         try {
             // Navigate to URL
@@ -109,7 +109,7 @@ public class LoginTest {
     @Test
     public void testInvalidLogin() {
         // Create a new ExtentTest instance for the test
-        ExtentTest test = extent.createTest("testInvalidLogin111");
+        ExtentTest test = extent.createTest("Login with Invalid Credentials");
 
         try {
             // Navigate to URL
