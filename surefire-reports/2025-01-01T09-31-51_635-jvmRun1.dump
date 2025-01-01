@@ -1,6 +1,6 @@
-# Created at 2025-01-01T09:30:25.378
+# Created at 2025-01-01T09:31:52.181
 org.testng.TestNGException: 
-Cannot find class in classpath: tests.LoginTest
+Cannot find class in classpath: tests.GoogleTest
 	at org.testng.xml.XmlClass.loadClass(XmlClass.java:74)
 	at org.testng.xml.XmlClass.init(XmlClass.java:66)
 	at org.testng.xml.XmlClass.<init>(XmlClass.java:53)
