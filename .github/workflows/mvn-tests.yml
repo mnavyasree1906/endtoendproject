@@ -47,24 +47,27 @@ jobs:
       # Install dependencies and run Maven tests
       - name: Run Maven Tests
         run: mvn test --batch-mode --fail-at-end
-      
-      - name: LS
-        run: |
-          echo "Displaying Surefire reports:"
-          ls -R /home/runner/work/endtoendproject
-  
-      - name: Publish Test Report
-        if: success() || failure()
-        uses: scacap/action-surefire-report@v1
-        with:
-          report_paths: '/home/runner/work/endtoendproject/target/surefire-reports/TEST-*.xml'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          check_name: Automation Tests Report
 
-      # Publish Surefire HTML Report
+      # Generate Surefire HTML Report
+      - name: Generate Surefire HTML Report
+        run: mvn surefire-report:report
+
+      # List the target directory for debugging
+      - name: List Surefire Report Directory
+        run: ls -la target/site
+
+      # Upload Surefire HTML Report as Artifact
+      - name: Upload HTML Report as Artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: surefire-html-report
+          path: target/site/surefire-report.html
+
+      # Optional: Publish Surefire HTML Report on GitHub Pages
       - name: Publish Surefire HTML Report
         if: success() || failure()
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: '/home/runner/work/endtoendproject/target/surefire-reports/'  # Ensure this directory contains index.html
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site/
