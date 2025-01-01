@@ -52,9 +52,9 @@ jobs:
       - name: Generate Surefire HTML Report
         run: mvn surefire-report:report
 
-      # List the target directory for debugging
+      # List Surefire Report Directory for debugging
       - name: List Surefire Report Directory
-        run: ls -la target/site
+        run: ls -R target/site
 
       # Upload Surefire HTML Report as Artifact
       - name: Upload HTML Report as Artifact
