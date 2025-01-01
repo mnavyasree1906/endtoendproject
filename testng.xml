@@ -6,6 +6,7 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.UserManagementTest"/>
+            <class name="tests.GoogleTest"/>
         </classes>
     </test>
 </suite>
