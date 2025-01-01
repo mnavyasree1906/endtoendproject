@@ -1,0 +1,38 @@
+name: Run Selenium Tests with Allure Reporting
+
+on:
+  push:
+    branches:
+      - allure
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Check out this repo
+        uses: actions/checkout@v2
+
+      # Set up Java
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      # Set up Maven
+      - name: Set up Maven
+        uses: s4u/maven-settings-action@v2
+
+      # Run Maven Tests and Generate Allure Report
+      - name: Run Maven Tests with Allure Reporting
+        run: mvn clean test allure:report --batch-mode --fail-at-end
+
+      # Publish Allure Report as GitHub Pages
+      - name: Publish Allure Report
+        if: success() || failure()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: target/site/allure-maven-plugin
+          github_token: ${{ secrets.GITHUB_TOKEN }}
