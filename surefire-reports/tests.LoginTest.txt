@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tests.LoginTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.869 s <<< FAILURE! - in tests.LoginTest
-tests.LoginTest.testInvalidLogin  Time elapsed: 11.187 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.998 s <<< FAILURE! - in tests.LoginTest
+tests.LoginTest.testInvalidLogin  Time elapsed: 11.909 s  <<< FAILURE!
 java.lang.AssertionError: 
 Test failed: no such element: Unable to locate element: {"method":"css selector","selector":".oxd\-topbar\-header\-breadcrumb"}
   (Session info: chrome=131.0.6778.139)
@@ -10,8 +10,8 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-1025-azure', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f783e0c069b61cfd40739c3ee971415b, findElement {using=class name, value=oxd-topbar-header-breadcrumb}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44477}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44477/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f783e0c069b61cfd40739c3ee971415b
+Command: [fdf26355fbc57f2cd9752363989868cb, findElement {using=class name, value=oxd-topbar-header-breadcrumb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46011}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46011/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fdf26355fbc57f2cd9752363989868cb
 	at tests.LoginTest.testInvalidLogin(LoginTest.java:128)
 
