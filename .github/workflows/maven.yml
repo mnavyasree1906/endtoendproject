@@ -10,9 +10,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "surefire" ]
 
 jobs:
   build:
@@ -50,3 +48,10 @@ jobs:
         check_name: Automation Tests Report
 
 
+      # Publish Extent HTML Report
+    - name: Publish Extent Reports
+      if: success() || failure()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          publish_dir: '/home/runner/work/endtoendproject/endtoendproject/target/'  # Ensure this directory contains index.html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
