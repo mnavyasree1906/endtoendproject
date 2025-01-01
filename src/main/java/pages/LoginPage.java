@@ -12,6 +12,7 @@ public class LoginPage {
     private By passwordField = By.name("password");
     private By loginButton = By.xpath("//button[@type='submit']");
     private By dashboardBreadcrumb = By.className("oxd-topbar-header-breadcrumb");
+    private By invalidLoginErrorMessage = By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
 
     // Constructor
     public LoginPage(WebDriver driver) {
@@ -44,4 +45,12 @@ public class LoginPage {
         enterPassword(password);
         clickLoginButton();
     }
-}
+
+    public boolean isErrorMessageDisplayed() {
+        try {
+            WebElement errorMessage = driver.findElement(invalidLoginErrorMessage);
+            return errorMessage.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }

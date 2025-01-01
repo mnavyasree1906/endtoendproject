@@ -117,11 +117,11 @@ public class LoginTest {
             test.info("Navigated to " + properties.getProperty("app.url"));
 
             // Attempt to login with invalid credentials
-            loginPage.login("invalidUser", "invalidPassword");
+            loginPage.login("invalidUsername", "invalidPassword");
             test.info("Login attempt with invalid credentials");
 
             // Assertion
-            Assert.assertFalse(loginPage.isDashboardDisplayed(), "Login should have failed but dashboard is displayed.");
+            Assert.assertTrue(loginPage.isErrorMessageDisplayed(), "Error message for invalid login is not displayed.");
             test.pass("Login failed as expected.");
         } catch (Exception e) {
             test.fail("Test failed: " + e.getMessage());
