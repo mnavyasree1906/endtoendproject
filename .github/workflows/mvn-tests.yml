@@ -54,20 +54,6 @@ jobs:
 
       # List Surefire Report Directory for debugging
       - name: List Surefire Report Directory
-        run: ls -R target/site
+        run: ls -R home/runner/work/endtoendproject
 
-      # Upload Surefire HTML Report as Artifact
-      - name: Upload HTML Report as Artifact
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: surefire-html-report
-          path: target/site/surefire-report.html
-
-      # Optional: Publish Surefire HTML Report on GitHub Pages
-      - name: Publish Surefire HTML Report
-        if: success() || failure()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/site/
+     
