@@ -33,11 +33,9 @@ jobs:
     - name: Build with Maven
       run: mvn test
 
-  
-
      # Optional: List contents of the target directory for debugging
     - name: List work directory
-      run: ls -R /home/runner/work/
+      run: ls -R /home/runner/work/endtoendproject/endtoendproject/target
 
     - name: Publish Test Report
       if: success() || failure()
