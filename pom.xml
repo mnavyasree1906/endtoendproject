@@ -75,19 +75,23 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0</version>
+    <configuration>
+        <suiteXmlFiles>
+            <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+        <includes>
+            <include>**/*Test.java</include>
+            <include>**/*Tests.java</include>
+        </includes>
+    </configuration>
+</plugin>
 
-            <!-- Maven Surefire Plugin (to run TestNG tests) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Tests.java</include>
-                    </includes>
-                </configuration>
-            </plugin>
+
+
         </plugins>
     </build>
          
