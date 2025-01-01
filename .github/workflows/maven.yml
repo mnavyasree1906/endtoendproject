@@ -35,6 +35,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    # Generate Surefire HTML Report
+    - name: Generate Surefire HTML Report
+      run: mvn surefire-report:report
+
     # Install Allure Commandline
     - name: Install Allure Commandline
       run: |
@@ -49,13 +53,13 @@ jobs:
     - name: List target directory for Allure Results
       run: ls -la target/
 
-    # Upload Surefire Reports as an artifact
-    - name: Upload Surefire Reports
+    # Upload Surefire HTML Reports as an artifact
+    - name: Upload Surefire HTML Reports
       if: always()  # Ensures this step runs even if the build/test fails
       uses: actions/upload-artifact@v3
       with:
-        name: surefire-reports
-        path: target/surefire-reports/
+        name: surefire-html-report
+        path: target/site/
 
     # Upload Allure Results as an artifact
     - name: Upload Allure Results as Artifact
@@ -64,6 +68,14 @@ jobs:
       with:
         name: allure-report
         path: target/allure-results/
+
+     # Serve Surefire HTML Reports on GitHub Pages
+    - name: Deploy Surefire Report to GitHub Pages
+      if: success()  # Only serve the report if the build succeeds
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./target/site/
 
     # Serve Allure Report on GitHub Pages
     - name: Deploy Allure Report to GitHub Pages
