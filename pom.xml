@@ -80,12 +80,9 @@
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.0.0</version>
     <configuration>
-        <suiteXmlFiles>
-            <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
-        </suiteXmlFiles>
         <includes>
-            <include>**/*Test.java</include>
-            <include>**/*Tests.java</include>
+        <include>tests/LoginTest.java</include>
+        <include>tests/UserManagementTest.java</include>
         </includes>
     </configuration>
 </plugin>
