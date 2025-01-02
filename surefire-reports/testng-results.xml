@@ -1,39 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-02T08:16:08 UTC" name="Surefire suite" finished-at="2025-01-02T08:16:22 UTC" duration-ms="13727">
+  <suite started-at="2025-01-02T08:49:50 UTC" name="Surefire suite" finished-at="2025-01-02T08:50:09 UTC" duration-ms="19653">
     <groups>
     </groups>
-    <test started-at="2025-01-02T08:16:08 UTC" name="Surefire test" finished-at="2025-01-02T08:16:22 UTC" duration-ms="13727">
+    <test started-at="2025-01-02T08:49:50 UTC" name="Surefire test" finished-at="2025-01-02T08:50:09 UTC" duration-ms="19653">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:16:08 UTC" name="setup" finished-at="2025-01-02T08:16:12 UTC" duration-ms="3646" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:49:50 UTC" name="setup" finished-at="2025-01-02T08:49:53 UTC" duration-ms="2954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testInvalidLogin()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:16:12 UTC" name="testInvalidLogin" finished-at="2025-01-02T08:16:13 UTC" duration-ms="1326" status="PASS">
+        <test-method signature="testInvalidLogin()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:49:53 UTC" name="testInvalidLogin" finished-at="2025-01-02T08:49:54 UTC" duration-ms="1412" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidLogin -->
-        <test-method signature="testValidLogin()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:16:13 UTC" name="testValidLogin" finished-at="2025-01-02T08:16:14 UTC" duration-ms="1121" status="PASS">
+        <test-method signature="testValidLogin()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:49:54 UTC" name="testValidLogin" finished-at="2025-01-02T08:49:55 UTC" duration-ms="1161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:16:14 UTC" name="teardown" finished-at="2025-01-02T08:16:15 UTC" duration-ms="343" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@4a83a74a]" started-at="2025-01-02T08:49:55 UTC" name="teardown" finished-at="2025-01-02T08:49:56 UTC" duration-ms="328" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.LoginTest -->
       <class name="tests.AddEmployeeTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.AddEmployeeTest@3ba987b8]" started-at="2025-01-02T08:16:15 UTC" name="setup" finished-at="2025-01-02T08:16:15 UTC" duration-ms="412" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.AddEmployeeTest@3ba987b8]" started-at="2025-01-02T08:49:56 UTC" name="setup" finished-at="2025-01-02T08:49:56 UTC" duration-ms="388" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAddEmployee()[pri:0, instance:tests.AddEmployeeTest@3ba987b8]" started-at="2025-01-02T08:16:15 UTC" name="testAddEmployee" finished-at="2025-01-02T08:16:22 UTC" duration-ms="6653" status="PASS">
+        <test-method signature="testAddEmployee()[pri:0, instance:tests.AddEmployeeTest@3ba987b8]" started-at="2025-01-02T08:49:56 UTC" name="testAddEmployee" finished-at="2025-01-02T08:50:09 UTC" duration-ms="13162" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Test failed: no such element: Unable to locate element: {"method":"xpath","selector":"//h6[normalize-space()='Personal Details']"}
+  (Session info: chrome=131.0.6778.139)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-1025-azure', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f073ba2772d013cb9ad2ba9abbebf156, findElement {using=xpath, value=//h6[normalize-space()='Personal Details']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33143/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f073ba2772d013cb9ad2ba9abbebf156]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Test failed: no such element: Unable to locate element: {"method":"xpath","selector":"//h6[normalize-space()='Personal Details']"}
+  (Session info: chrome=131.0.6778.139)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-1025-azure', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f073ba2772d013cb9ad2ba9abbebf156, findElement {using=xpath, value=//h6[normalize-space()='Personal Details']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33143/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f073ba2772d013cb9ad2ba9abbebf156
+at org.testng.Assert.fail(Assert.java:111)
+at tests.AddEmployeeTest.testAddEmployee(AddEmployeeTest.java:127)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:136)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:145)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddEmployee -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddEmployeeTest@3ba987b8]" started-at="2025-01-02T08:16:22 UTC" name="tearDown" finished-at="2025-01-02T08:16:22 UTC" duration-ms="155" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddEmployeeTest@3ba987b8]" started-at="2025-01-02T08:50:09 UTC" name="tearDown" finished-at="2025-01-02T08:50:09 UTC" duration-ms="176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
