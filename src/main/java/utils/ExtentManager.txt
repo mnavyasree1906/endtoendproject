@@ -1,0 +1,36 @@
+package utils;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class ExtentManager {
+    private static ExtentReports extent;
+
+    private ExtentManager() {
+        // Private constructor to prevent instantiation
+    }
+
+    public static ExtentReports getInstance() {
+        if (extent == null) {
+            synchronized (ExtentManager.class) {
+                if (extent == null) {
+                    ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/index.html");
+                    sparkReporter.config().setReportName("Automation Test Report");
+                    sparkReporter.config().setDocumentTitle("Automation Report - Selenium TestNG");
+                    sparkReporter.config().setEncoding("UTF-8");
+
+                    extent = new ExtentReports();
+                    extent.attachReporter(sparkReporter);
+
+                    // Add system information to the report
+                    extent.setSystemInfo("Tester", "Vikram Damodar");
+                    extent.setSystemInfo("Environment", "QA");
+                    extent.setSystemInfo("Browser", "Chrome");
+                    extent.setSystemInfo("OS", System.getProperty("os.name"));
+                    extent.setSystemInfo("Java Version", System.getProperty("java.version"));
+                }
+            }
+        }
+        return extent;
+    }
+}
