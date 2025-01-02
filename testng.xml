@@ -5,7 +5,8 @@
     <test name="AllTests">
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.UserManagementTest"/>
+            <!-- <class name="tests.UserManagementTest"/>-->
+            <class name="tests.AddEmployeeTest"/>
         </classes>
     </test>
 </suite>
