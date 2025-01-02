@@ -118,6 +118,9 @@ public class AddEmployeeTest {
             addEmployeePage.clickSave();
             test.info("Clicked on Save button.");
 
+            // Wait for the 'Personal Details' element to be visible before interacting with it
+            WebElement personalDetails = new WebDriverWait(driver, Duration.ofSeconds(10))
+
             // Verify success message
             Assert.assertTrue(addEmployeePage.isSuccessMessageDisplayed(), "Personal Details message is not displayed!");
             Assert.assertEquals(addEmployeePage.getSuccessMessage(), "Personal Details", "Confirmation Message mismatch!");
