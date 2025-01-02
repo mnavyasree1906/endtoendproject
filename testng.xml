@@ -7,6 +7,7 @@
             <class name="tests.LoginTest"/>
             <!-- <class name="tests.UserManagementTest"/>-->
             <class name="tests.AddEmployeeTest"/>
+            <class name="tests.LeaveApplyTests"/>
         </classes>
     </test>
 </suite>
