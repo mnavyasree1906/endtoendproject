@@ -1,17 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 20.186 s <<< FAILURE! - in TestSuite
-tests.AddEmployeeTest.testAddEmployee  Time elapsed: 13.169 s  <<< FAILURE!
-java.lang.AssertionError: 
-Test failed: no such element: Unable to locate element: {"method":"xpath","selector":"//h6[normalize-space()='Personal Details']"}
-  (Session info: chrome=131.0.6778.139)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-1025-azure', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f073ba2772d013cb9ad2ba9abbebf156, findElement {using=xpath, value=//h6[normalize-space()='Personal Details']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.139, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33143/devtoo..., se:cdpVersion: 131.0.6778.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f073ba2772d013cb9ad2ba9abbebf156
-	at tests.AddEmployeeTest.testAddEmployee(AddEmployeeTest.java:127)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.441 s - in TestSuite
