@@ -33,8 +33,8 @@ public class AddEmployeeTest {
     @BeforeClass
     public void setup() throws IOException {
         // Set up ExtentReports with detailed configurations
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/index.html");
-        sparkReporter.config().setReportName("Automation Test Report");
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/AddEmployeeReport.html");
+        sparkReporter.config().setReportName("Add Employee Test Report");
         sparkReporter.config().setDocumentTitle("Automation Report - Selenium TestNG");
         sparkReporter.config().setEncoding("UTF-8");
 
@@ -42,7 +42,7 @@ public class AddEmployeeTest {
         extent.attachReporter(sparkReporter);
 
         // Add system information to the report
-        extent.setSystemInfo("Tester", "Navya Sree");
+        extent.setSystemInfo("Tester", "Vikram Damodar");
         extent.setSystemInfo("Environment", "QA");
         extent.setSystemInfo("Browser", "Chrome");
         extent.setSystemInfo("OS", System.getProperty("os.name"));
