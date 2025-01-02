@@ -3,9 +3,12 @@ package tests;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -85,7 +88,6 @@ public class AddEmployeeTest {
 
     @Test
     public void testAddEmployee() {
-
         // Create a new ExtentTest instance for the test
         test = extent.createTest("Add Employee Test");
 
@@ -118,11 +120,9 @@ public class AddEmployeeTest {
             addEmployeePage.clickSave();
             test.info("Clicked on Save button.");
 
-            // Wait for the 'Personal Details' element to be visible before interacting with it
-            WebElement personalDetails = new WebDriverWait(driver, Duration.ofSeconds(10))
+            Assert.assertTrue(addEmployeePage.isSuccessMessageDisplayed(), "Personal Details message is not displayed!");
 
             // Verify success message
-            Assert.assertTrue(addEmployeePage.isSuccessMessageDisplayed(), "Personal Details message is not displayed!");
             Assert.assertEquals(addEmployeePage.getSuccessMessage(), "Personal Details", "Confirmation Message mismatch!");
             test.pass("Employee added successfully and Personal Details message is displayed.");
         } catch (Exception e) {
