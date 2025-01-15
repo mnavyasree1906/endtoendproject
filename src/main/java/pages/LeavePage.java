@@ -10,7 +10,7 @@ public class LeavePage {
     WebDriver driver;
 
     // Locators for Leave Apply Page
-    private By leaveMenu = By.xpath("//a[@class='oxd-main-menu-item active']");
+    private By leaveMenu = By.xpath("//span[normalize-space()='Leave']");
     private By applyLeaveOption = By.linkText("Apply");
     private By leaveTypeDropdown = By.xpath("//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow']");
     private By startDateField = By.xpath("//div@class='oxd-date-input']");
@@ -38,6 +38,11 @@ public class LeavePage {
     public void applyLeave(String leaveType, String startDate, String endDate, String comment) {
         Select leaveTypeSelect = new Select(driver.findElement(leaveTypeDropdown));
         leaveTypeSelect.selectByVisibleText(leaveType);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         driver.findElement(startDateField).sendKeys(startDate);
         driver.findElement(endDateField).sendKeys(endDate);

@@ -1,12 +1,18 @@
 package tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LeavePage;
 import pages.LoginPage;
+
+import java.time.Duration;
 
 public class LeaveApplyTests extends BaseTest {
 
@@ -37,7 +43,11 @@ public class LeaveApplyTests extends BaseTest {
             test.info("Navigated to Apply Leave page.");
 
             // Step 3: Verify the "Apply Leave" page is opened
-            Assert.assertTrue(leavePage.isApplyLeavePageOpened(), "Apply Leave page did not open");
+            //Assert.assertTrue(leavePage.isApplyLeavePageOpened(), "Apply Leave page did not open");
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement applyLeavePage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("applyLeavePage")));
+            Assert.assertTrue(applyLeavePage.isDisplayed(), "Apply Leave page did not open");
+
             test.pass("Apply Leave page opened successfully.");
 
             // Step 4: Verify the leave types are displayed in the dropdown
