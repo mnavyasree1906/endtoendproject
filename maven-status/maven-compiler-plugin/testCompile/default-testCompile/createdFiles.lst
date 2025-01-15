@@ -1,4 +1,4 @@
 tests/BaseTest.class
-tests/LoginTest.class
 tests/LeaveApplyTests.class
+tests/LoginTest.class
 tests/AddEmployeeTest.class
