@@ -1,25 +1,22 @@
+### Maven ###
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
 
 ### Eclipse ###
-.apt_generated
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
+.settings/
 .sts4-cache
+.factorypath
+.springBeans
 
 ### NetBeans ###
 /nbproject/private/
@@ -27,12 +24,26 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Build Files ###
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+### Visual Studio Code ###
 .vscode/
 
-### Mac OS ###
+### macOS ###
 .DS_Store
+
+### Exceptions ###
+# Ensure important files for GitHub Pages are not ignored
+!index.html
+!**/*.html
+!**/*.css
+!**/*.js
+!**/*.png
+!**/*.jpg
+!**/*.jpeg
+!**/*.gif
+!**/*.svg
