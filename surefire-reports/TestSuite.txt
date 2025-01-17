@@ -1,25 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 2, Errors: 0, Skipped: 6, Time elapsed: 3.297 s <<< FAILURE! - in TestSuite
-tests.AddEmployeeTest.setup  Time elapsed: 2.904 s  <<< FAILURE!
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 6, Time elapsed: 2.402 s <<< FAILURE! - in TestSuite
+tests.AddEmployeeTest.setup  Time elapsed: 1.966 s  <<< FAILURE!
 org.openqa.selenium.SessionNotCreatedException: 
 Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
   (session not created: DevToolsActivePort file doesn't exist)
   (The process started from chrome location /opt/google/chrome/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) 
-Host info: host: 'fv-az1373-806', ip: '10.1.0.18'
+Host info: host: 'fv-az1267-812', ip: '10.1.0.106'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-1017-azure', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--window-size=1920,1080, --remote-allow-origins=*], binary: /opt/google/chrome/google-c..., extensions: []}}]}]
 	at tests.AddEmployeeTest.setup(AddEmployeeTest.java:17)
 
-tests.LoginTest.setup  Time elapsed: 0.264 s  <<< FAILURE!
+tests.LoginTest.setup  Time elapsed: 0.305 s  <<< FAILURE!
 org.openqa.selenium.SessionNotCreatedException: 
 Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
   (session not created: DevToolsActivePort file doesn't exist)
   (The process started from chrome location /opt/google/chrome/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) 
-Host info: host: 'fv-az1373-806', ip: '10.1.0.18'
+Host info: host: 'fv-az1267-812', ip: '10.1.0.106'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-1017-azure', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
